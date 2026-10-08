@@ -156,3 +156,30 @@ df.to_csv("cleaned_dataset.csv", index=False)
 print("Cleaning completed successfully.")
 print("Remaining duplicate rows:", df.duplicated().sum())
 print("Final rows and columns:", df.shape)
+
+print("\n--- FINAL CHECK ---")
+
+print("\n1. Duplicate rows:")
+print("Original:", pd.read_csv("budgetwise_finance_dataset.csv").duplicated().sum())
+print("Cleaned:", df.duplicated().sum())
+
+print("\n2. Missing values:")
+print(df.isnull().sum())
+
+print("\n3. Data types:")
+print(df.dtypes)
+
+print("\n4. Categories:")
+print(sorted(df["category"].dropna().unique()))
+
+print("\n5. Payment modes:")
+print(sorted(df["payment_mode"].dropna().unique()))
+
+print("\n6. Locations:")
+print(sorted(df["location"].dropna().unique()))
+
+print("\n7. Transaction types:")
+print(sorted(df["transaction_type"].dropna().unique()))
+
+print("\n8. Rows and columns:")
+print(df.shape)
